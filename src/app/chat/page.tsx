@@ -11,27 +11,21 @@ import { openYouTubeAtTimestamp } from "@/utils/youtube";
 const mockChannels = [
   {
     id: "1",
-    title: "Google Developers",
+    title: "The Overpost",
     description: "The official Google Developers channel",
-    thumbnailUrl: "https://via.placeholder.com/150",
+    thumbnailUrl:
+      "https://images-v2.noiceid.cc/catalog/original/content-1721025844031.jpg",
     videoCount: 450,
     processingStatus: "completed" as const,
   },
   {
     id: "2",
-    title: "Microsoft Developer",
-    description: "Official Microsoft Developer channel",
-    thumbnailUrl: "https://via.placeholder.com/150",
-    videoCount: 320,
+    title: "Timothy Ronald",
+    description: "The official Google Developers channel",
+    thumbnailUrl:
+      "https://yt3.googleusercontent.com/X1mL9N1ksnfNYvNy9Dm0JsilbM1S4OoeDpAEUyJto57z4i8qJ8RsyAYR-bqUIvghg3YtHXwREA=s160-c-k-c0x00ffffff-no-rj",
+    videoCount: 20,
     processingStatus: "completed" as const,
-  },
-  {
-    id: "3",
-    title: "AWS",
-    description: "Official Amazon Web Services channel",
-    thumbnailUrl: "https://via.placeholder.com/150",
-    videoCount: 280,
-    processingStatus: "processing" as const,
   },
 ];
 
@@ -45,26 +39,6 @@ const mockVideos = [
     duration: "10:30",
     viewCount: 150000,
     transcriptStatus: "available" as const,
-  },
-  {
-    id: "2",
-    youtubeVideoId: "ScMzIvxBSi4",
-    title: "Advanced JavaScript Techniques",
-    thumbnailUrl: "https://via.placeholder.com/320x180",
-    publishedAt: "2023-09-15",
-    duration: "25:45",
-    viewCount: 85000,
-    transcriptStatus: "available" as const,
-  },
-  {
-    id: "3",
-    youtubeVideoId: "fJ9rUzIMcZQ",
-    title: "Machine Learning Basics",
-    thumbnailUrl: "https://via.placeholder.com/320x180",
-    publishedAt: "2023-08-20",
-    duration: "18:20",
-    viewCount: 120000,
-    transcriptStatus: "pending" as const,
   },
 ];
 
@@ -83,10 +57,10 @@ const mockMessages = [
     createdAt: "2023-10-15T10:31:00Z",
     references: [
       {
-        videoId: "1",
-        youtubeVideoId: "dQw4w9WgXcQ",
+        videoId: "kf4JapB2my4",
+        youtubeVideoId: "kf4JapB2my4",
         videoTitle: "Introduction to Cloud Computing",
-        thumbnailUrl: "https://via.placeholder.com/320x180",
+        thumbnailUrl: "https://i3.ytimg.com/vi/kf4JapB2my4/maxresdefault.jpg",
         segments: [
           {
             transcriptId: "1",
@@ -153,8 +127,9 @@ export default function ChatPage() {
           {
             videoId: "1",
             youtubeVideoId: "dQw4w9WgXcQ",
-            videoTitle: "Introduction to Cloud Computing",
-            thumbnailUrl: "https://via.placeholder.com/320x180",
+            videoTitle: "Andry",
+            thumbnailUrl:
+              "https://i3.ytimg.com/vi/kf4JapB2my4/maxresdefault.jpg",
             segments: [
               {
                 transcriptId: "1",
@@ -241,9 +216,10 @@ export default function ChatPage() {
                   <div key={index} className="border rounded-lg p-4">
                     <h3 className="font-medium mb-3">{reference.videoTitle}</h3>
                     <div className="aspect-video bg-muted rounded mb-4 flex items-center justify-center">
-                      <span className="text-sm text-muted-foreground">
-                        Video Thumbnail
-                      </span>
+                      <img
+                        src={reference.thumbnailUrl}
+                        className="text-sm text-muted-foreground"
+                      ></img>
                     </div>
                     <div className="space-y-3">
                       {reference.segments.map((segment, segIndex) => (

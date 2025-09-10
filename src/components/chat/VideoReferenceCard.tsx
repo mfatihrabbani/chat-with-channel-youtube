@@ -61,7 +61,7 @@ export function VideoReferenceCard({
                   size="sm"
                   className="h-6 text-xs"
                   onClick={() =>
-                    onSegmentClick(reference.videoId, segment.startTime)
+                    onSegmentClick(reference.youtubeVideoId, segment.startTime)
                   }
                 >
                   <ExternalLink className="h-3 w-3" />
